@@ -63,9 +63,11 @@ const authMiddleware = jwtKoa({ secret: CONSTANTS.JWT_SECRET }).unless({
 @UseBefore(authMiddleware)
 export class UserInviteRecordController {
   @Post("/create")
-  create(@HeaderParams("Authorization") token: string) {
+  create(@HeaderParams("Authorization") token: string, @Ctx() ctx: Koa.Context) {
     // 获取http中header的token并解析
     const authUser = verifyToken(token);
+    // 也可以直接从上下文对象中获取已经koa-jwt解码的用户数据
+    const authUser2 = ctx.state.user;
   }
 }
 
