@@ -7,6 +7,7 @@
   - docker 虚拟机
   - icon 图标
   - koa Node.js 的 Web 框架
+  - linux
   - prisma Node 端 ORM 库
   - wechat-miniprogram 微信小程序
     <!-- - typescript -->
