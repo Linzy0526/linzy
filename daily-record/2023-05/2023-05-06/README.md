@@ -33,6 +33,23 @@ const app: Koa = useKoaServer < Koa > (koa, routingConfigs);
 
 遗留问题：catch 的 err 无法判断是否为 routing-controller 内暴露出的一些寄生 Error 类，如无法用 `err instarnceof UnauthorizedError`,暂时只能判断构造函数名是否相同
 
+#### 2.nginx 上传文件大小限制
+
+在上传文件的时候服务器报错 `413 Request Entity Too Large`
+
+由于 nginx 服务器默认上传大小的限制为 1M，需要在 nginx.conf 去设置上传大小限制
+
+```conf
+  server {
+  #charset koi8-r;
+  # client_max_body_size 用来修改允许客户端上传文件的大小。默认为1m，如果设置为0，表示上传文件大小不受限制。
+  # 可以在以下模块设置: http, server, location
+  client_max_body_size 10m;
+  }
+```
+
+重启服务器
+
 ### 学习记录
 
 #### 1.linux 命令—进程
