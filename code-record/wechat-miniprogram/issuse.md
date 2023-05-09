@@ -29,3 +29,19 @@
    解决：`/images/Home/banner-img/HomeCover01.jpg`
 
    注：生产环境的图片资源链接避免资源链接书写不规范
+
+4. 微信小程序点击事件参数获取的问题
+
+   情景：父节点用 bindtap 绑定 FnA 事件，在父节点上绑定所需的属性值
+
+   ```html
+   <view class="father" data-value="a" bindtap="FnA">
+     <view class="child"></view>
+   </view>
+   ```
+
+   为了获取节点上绑定的 data,一般我们可以从回调函数参数 event 对象中获取
+
+   event.target.dataset 当前点击元素上的属性，如果是子元素则是子元素上的属性，如果是父节点则是父节点上的属性值
+
+   event.currentTarget.dataset 获取事件绑定元素上的属性值（上面代码会回去父节点上的属性）
