@@ -45,3 +45,9 @@
    event.target.dataset 当前点击元素上的属性，如果是子元素则是子元素上的属性，如果是父节点则是父节点上的属性值
 
    event.currentTarget.dataset 获取事件绑定元素上的属性值（上面代码会回去父节点上的属性）
+
+5. 微信小程序上传组件传参问题
+
+   问题：wx.uploadFile 方法中官方文档介绍通过 `formData:Object` 传递额外的参数，在实际生产中无法实现
+
+   解决：直接在 url 链接上带上参数，ex: '/upload/file?prams=value'
