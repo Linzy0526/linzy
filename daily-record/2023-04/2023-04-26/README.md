@@ -6,7 +6,7 @@
 
 ### 问题记录
 
-1. Prisma 中事务回滚无法正常回滚
+~~1. Prisma 中事务回滚无法正常回滚~~  [prisma事务](https://github.com/Linzy0526/linzy/tree/master/code-record/prisma/事务.md)
 
 Prisma 事务用 prisma.$transcation 去实现
 
@@ -39,7 +39,7 @@ const result = await prisma.$transcation([
 
 这种写法可以实现回滚，但是不能对做额外的业务逻辑处理，主动抛出异常去中断事务
 
-2. 奇葩的资源连接异常
+1. 奇葩的资源连接异常
 
 在开发过程中经常应用到一些静态文件的访问，今日突然碰到一个连接无法访问的问题。
 
