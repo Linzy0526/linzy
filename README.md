@@ -11,8 +11,9 @@
   - linux
   - nginx
   - prisma Node 端 ORM 库
+  - three.js 3d画布
   - wechat-miniprogram 微信小程序
-    <!-- - typescript -->
+  - typescript
     <!-- - alipay-miniprogram
   - docker -->
 - daily-record 日常中碰到的问题记录及学习记录
